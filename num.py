@@ -26,7 +26,6 @@ def difficult():
     hard_attempts = 5
     choose_dif = input("Choose a difficulty. Type 'easy' or 'hard': ")
     if choose_dif == 'easy':
-        print(f'Alright! You have {easy_attempts} remaining to guess number')
         while easy_attempts > 0:
             guess = int(input('Make a guess : '))
 
@@ -40,6 +39,9 @@ def difficult():
             elif random_number > guess:
                 easy_attempts -= 1
                 print(f'Its to low!\n You have {easy_attempts} attempts to  remaining!')
+
+        if easy_attempts == 0:
+            print(f'You lose! Coz you have {easy_attempts} attempts')
 
     else:
         print(f'Alright! You have {hard_attempts} remaining to guess number')
@@ -58,5 +60,7 @@ def difficult():
                 hard_attempts -= 1
                 print(f'Its to low!\n You have {hard_attempts} attempts to  remaining!')
 
+        if hard_attempts == 0:
+            print(f'You lose! Coz you have {hard_attempts} attempts')
 
 difficult()
